@@ -1,0 +1,5 @@
+<h2>Hey <%= @borrower.email %></h2>
+<p>
+  <%= @reservation.expires_at %> is a deadline to bring your book <%= @book.title %> back. Please return the book by this deadline<br>
+  <%= link_to 'Go to book', book_url(@book.id, host: 'localhost:3000') %>
+</p>

@@ -4,6 +4,7 @@ class ReservationsController < ApplicationController
   def reserve
     reservation_handler.reserve(current_user)
     redirect_to(book_path(book.id))
+    ReservationsMailer.notify_about_reservation(current_user, book).deliver_now
   end
 
   def take
